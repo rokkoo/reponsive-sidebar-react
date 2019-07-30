@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { Row, Column } from 'simple-flexbox';
+import { StyleSheet, css } from 'aphrodite';
 import './App.css';
+import Sidebar from './components/sidebar/SidebarComponent';
+
+const styles = StyleSheet.create({
+  container: {
+    height: '100vh'
+  },
+  content: {
+    marginTop: 54
+  },
+  mainBlock: {
+    backgroundColor: '#F7F8FC',
+    padding: 30
+  }
+});
 
 function App() {
+  const [selectedItem, setSelectedItem] = useState('Tickets');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Row className={css(styles.container)}>
+        <Sidebar
+          selectedItem={selectedItem}
+          onChange={selectedItem => setSelectedItem(selectedItem)}
+        />
+        <Column flexGrow={1} className={css(styles.mainBlock)}>
+          <div className={css(styles.content)}>
+            <span>Content</span>
+          </div>
+        </Column>
+      </Row>
     </div>
   );
 }
