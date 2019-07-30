@@ -4,8 +4,6 @@ import { StyleSheet, css } from 'aphrodite';
 import LogoComponent from './LogoComponent';
 import MenuItemComponent from './MenuItemComponent';
 import IconTickets from '../../assets/icon-ticket.js';
-import IconArticles from '../../assets/icon-articles';
-import IconSettings from '../../assets/icon-settings';
 import iconSettings from '../../assets/icon-settings';
 import iconArticles from '../../assets/icon-articles';
 

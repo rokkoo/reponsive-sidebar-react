@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Row, Column } from 'simple-flexbox';
 import { StyleSheet, css } from 'aphrodite';
 import './App.css';
+import Header from './components/header/HeaderComponent';
 import Sidebar from './components/sidebar/SidebarComponent';
 
 const styles = StyleSheet.create({
@@ -27,6 +28,7 @@ function App() {
           onChange={selectedItem => setSelectedItem(selectedItem)}
         />
         <Column flexGrow={1} className={css(styles.mainBlock)}>
+          <Header title={selectedItem} />
           <div className={css(styles.content)}>
             <span>Content</span>
           </div>
